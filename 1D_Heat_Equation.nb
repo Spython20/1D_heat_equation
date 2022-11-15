@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5927,        183]
-NotebookOptionsPosition[      5580,        169]
-NotebookOutlinePosition[      5973,        185]
-CellTagsIndexPosition[      5930,        182]
+NotebookDataLength[     10106,        279]
+NotebookOptionsPosition[      9535,        261]
+NotebookOutlinePosition[      9926,        277]
+CellTagsIndexPosition[      9883,        274]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
@@ -30,14 +32,14 @@ Cell[BoxData[
       RowBox[{"Sin", "[", 
        RowBox[{"Pi", "*", 
         RowBox[{"x", "/", "80"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{"(*", 
     RowBox[{"Plot", "[", 
      RowBox[{
       RowBox[{"f", "[", "x", "]"}], ",", 
       RowBox[{"{", 
-       RowBox[{"x", ",", "0", ",", "80"}], "}"}]}], "]"}], "*)"}], "\n", 
-   "\[IndentingNewLine]", 
+       RowBox[{"x", ",", "0", ",", "80"}], "}"}]}], "]"}], "*)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Input", " ", "problem", " ", "constants"}], "*)"}], 
    "\[IndentingNewLine]", 
@@ -48,10 +50,11 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"K", "=", "0.95"}], ";"}], "\n", 
    RowBox[{
-    RowBox[{"L", "=", "80"}], ";"}], "\n", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Compute", " ", "intermediate", " ", "variables"}], "*)"}], 
+    RowBox[{"L", "=", "80"}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Compute", " ", "intermediate", " ", "variables"}], "*)"}], "\n", 
+   
    RowBox[{
     RowBox[{"c", "=", 
      RowBox[{
@@ -60,20 +63,22 @@ Cell[BoxData[
         RowBox[{"(", 
          RowBox[{"\[Rho]", "*", "\[Sigma]"}], ")"}]}], ")"}], "^", 
       RowBox[{"(", 
-       RowBox[{"1", "/", "2"}], ")"}]}]}], ";"}], "\n", "\[IndentingNewLine]", 
+       RowBox[{"1", "/", "2"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Define", " ", 
      RowBox[{"Subscript", "[", 
-      RowBox[{"\[Lambda]", ",", "n"}], "]"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"\[Lambda]", ",", "n"}], "]"}]}], "*)"}], "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"\[Lambda]n", "[", "n_", "]"}], "=", 
      RowBox[{"c", "*", "n", "*", 
-      RowBox[{"Pi", "/", "L"}]}]}], ";"}], "\n", "\[IndentingNewLine]", 
+      RowBox[{"Pi", "/", "L"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Define", " ", "total", " ", "solution", " ", "u", 
      RowBox[{"(", 
-      RowBox[{"x", ",", "t"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"x", ",", "t"}], ")"}]}], "*)"}], "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"u", "[", 
@@ -87,13 +92,13 @@ Cell[BoxData[
        "]"}], " ", 
       RowBox[{"Sin", "[", 
        RowBox[{
-        RowBox[{"Pi", "/", "L"}], " ", "x"}], "]"}]}]}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+        RowBox[{"Pi", "/", "L"}], " ", "x"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Verify", " ", "that", " ", "u", 
      RowBox[{"(", 
       RowBox[{"x", ",", "t"}], ")"}], " ", "satisfies", " ", "the", " ", 
-     "original", " ", "PDE"}], "*)"}], "\[IndentingNewLine]", 
+     "original", " ", "PDE"}], "*)"}], "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"Chop", "[", 
@@ -110,12 +115,12 @@ Cell[BoxData[
            RowBox[{"x", ",", "t"}], "]"}], ",", 
           RowBox[{"{", 
            RowBox[{"x", ",", "2"}], "}"}]}], "]"}]}]}], "]"}], "==", "0"}], 
-    ";"}], "\n", "\[IndentingNewLine]", 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Verify", " ", "u", 
      RowBox[{"(", 
       RowBox[{"x", ",", "t"}], ")"}], " ", "satisfies", " ", "the", " ", 
-     "BCs"}], "*)"}], "\[IndentingNewLine]", 
+     "BCs"}], "*)"}], "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"u", "[", 
@@ -137,11 +142,14 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"u", "[", 
       RowBox[{"x", ",", "0"}], "]"}], "==", 
-     RowBox[{"f", "[", "x", "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+     RowBox[{"f", "[", "x", "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{"Animate", " ", "the", " ", "scenario"}], "*)"}], 
    "\[IndentingNewLine]", 
-   RowBox[{"Manipulate", "[", 
+   RowBox[{"(*", 
+    RowBox[{"Animate", " ", "the", " ", "scenario"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Animate", "[", 
     RowBox[{
      RowBox[{"Plot", "[", 
       RowBox[{
@@ -149,11 +157,11 @@ Cell[BoxData[
         RowBox[{"x", ",", "t"}], "]"}], ",", 
        RowBox[{"{", 
         RowBox[{"x", ",", "0", ",", "L"}], "}"}], ",", 
-       RowBox[{"PlotLabel", "->", "\"\<Sounding Rod Heat\>\""}], ",", 
+       RowBox[{"PlotLabel", "->", "\"\<Copper Rod Heat\>\""}], ",", 
        RowBox[{"AxesLabel", "->", 
         RowBox[{"{", 
          RowBox[{"\"\<x(m)\>\"", ",", "\"\<u(x,t)(C\[Degree])\>\""}], "}"}]}],
-        ",", 
+        ",", "\[IndentingNewLine]", 
        RowBox[{"PlotRange", "->", 
         RowBox[{"{", 
          RowBox[{
@@ -161,14 +169,98 @@ Cell[BoxData[
            RowBox[{"0", ",", "L"}], "}"}], ",", 
           RowBox[{"{", 
            RowBox[{"0", ",", "100"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{"{", 
-      RowBox[{"t", ",", "0", ",", "1700"}], "}"}]}], "]"}]}]}]], "Input",
- CellChangeTimes->{
-  3.877509441880288*^9},ExpressionUUID->"ed99e079-4e38-42a1-bc09-\
-b5d56826ad06"]
+      RowBox[{"t", ",", "0", ",", "1700"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ControlType", "->", "Animator"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AnimationRate", "\[Rule]", "150"}], ",", "\[IndentingNewLine]", 
+     
+     RowBox[{"RefreshRate", "\[Rule]", "60"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AnimationRunning", "\[Rule]", "False"}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulator", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{3.877509441880288*^9, 3.87751492067566*^9},
+ CellLabel->
+  "In[291]:=",ExpressionUUID->"ed99e079-4e38-42a1-bc09-b5d56826ad06"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 472.8220224380493, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 1700}}, Typeset`size$$ = {
+    360., {120., 125.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        $CellContext`u[$CellContext`x, $CellContext`t$$], {$CellContext`x, 
+         0, $CellContext`L}, PlotLabel -> "Copper Rod Heat", 
+        AxesLabel -> {"x(m)", "u(x,t)(C\[Degree])"}, 
+        PlotRange -> {{0, $CellContext`L}, {0, 100}}], 
+      "Specifications" :> {{$CellContext`t$$, 0, 1700, AnimationRate -> 150, 
+         RefreshRate -> 60, AnimationRunning -> False, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, ControlType -> Animator, AppearanceElements -> 
+        None, DefaultBaseStyle -> "Animate", DefaultLabelStyle -> 
+        "AnimateLabel", SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {157., 163.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.877514921209858*^9},
+ CellLabel->
+  "Out[301]=",ExpressionUUID->"efe6ee47-0e28-42bc-aeb2-f750c1707392"],
+
+Cell[BoxData[
+ TagBox[
+  DynamicModuleBox[{Typeset`var$$ = 0}, 
+   PaneBox[
+    DynamicModuleBox[{Typeset`open$$ = False, Typeset`paused$$ = Automatic, 
+     Typeset`running$$ = False, Typeset`index$$ = Automatic, Typeset`rate$$ = 
+     Automatic, Typeset`dir$$ = Forward}, 
+     StyleBox[
+      DynamicBox[FEPrivate`FrontEndResource["FEExpressions", "Manipulator06"][
+       
+        Dynamic[Typeset`var$$], 
+        Dynamic[Typeset`var$$], {0, 1}, Medium, Small, Automatic, True, 
+        Automatic, False, True, True, All, False, {}, 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`running$$], 
+        Dynamic[Typeset`index$$], 
+        Dynamic[Typeset`rate$$], 
+        Dynamic[Typeset`dir$$]],
+       ImageSizeCache->{212., {9., 15.}}],
+      DynamicUpdating->True],
+     DynamicModuleValues:>{}],
+    BaselinePosition->Baseline,
+    ImageMargins->0]],
+  Manipulate`InterpretManipulator[0, {0, 1}, {}]]], "Output",
+ CellChangeTimes->{3.87751492127493*^9},
+ CellLabel->
+  "Out[302]=",ExpressionUUID->"3e5e5291-a1aa-4559-b8f1-9514f3c679d2"]
+}, Open  ]]
 },
 WindowSize->{808, 686},
-WindowMargins->{{110, Automatic}, {-1, Automatic}},
+WindowMargins->{{Automatic, 0}, {41, Automatic}},
 FrontEndVersion->"12.3 for Mac OS X x86 (64-bit) (May 11, 2021)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"db0ed7e1-837b-432c-a03a-9c92bd7b9aa7"
@@ -184,10 +276,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 5018, 147, 640, "Input",ExpressionUUID->"ed99e079-4e38-42a1-bc09-b5d56826ad06"]
+Cell[CellGroupData[{
+Cell[580, 22, 5641, 161, 829, "Input",ExpressionUUID->"ed99e079-4e38-42a1-bc09-b5d56826ad06"],
+Cell[6224, 185, 2237, 45, 339, "Output",ExpressionUUID->"efe6ee47-0e28-42bc-aeb2-f750c1707392"],
+Cell[8464, 232, 1055, 26, 43, "Output",ExpressionUUID->"3e5e5291-a1aa-4559-b8f1-9514f3c679d2"]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
